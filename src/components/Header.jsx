@@ -8,7 +8,7 @@ const Header = ({ onSearch }) => {
   const totalQty = items.reduce((s, i) => s + i.qty, 0);
 
   return (
-    <nav className="navbar navbar-light px-4 site-header">
+    <nav className="navbar navbar-light px-4 site-header flex-nowrap">
       <span className="navbar-brand fw-bold header-left">
         <div className="site-title">
           <img src="/images/netflix.png" alt="" />

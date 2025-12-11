@@ -38,7 +38,7 @@ body {
   background-color: #222;
   color: #fff;
   font-size: 1rem;
-  min-width: 225px;
+  min-width: calc(100% - 30px); 
 }
 #search-bar::placeholder {
   color: #888;
