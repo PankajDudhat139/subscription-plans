@@ -102,7 +102,9 @@ const CartSidebar = () => {
             i.price * i.qty
           }`
       )
-      .join("%0A")}%0A%0ASubtotal: ₹${subtotal.toFixed(2)}%0ADiscount: − ₹${discount.toFixed(2)}%0ATotal: ₹${total.toFixed(2)}`;
+      .join("%0A")}%0A%0ASubtotal: ₹${subtotal.toFixed(
+      2
+    )}%0ADiscount: − ₹${discount.toFixed(2)}%0ATotal: ₹${total.toFixed(2)}`;
 
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${wMessage}`;
     window.open(whatsappUrl, "_blank");
@@ -112,9 +114,11 @@ const CartSidebar = () => {
     <div className={`cart-sidebar ${isOpen ? "open" : ""}`} tabIndex="-1">
       <div className="cart-header">
         <h2>Cart</h2>
-        <button className="close-btn" onClick={() => dispatch(toggleCart())}>
-          ×
-        </button>
+        <img
+          onClick={() => dispatch(toggleCart())}
+          src="/images/cross.png"
+          alt="close"
+        />
       </div>
 
       <div className="cart-items">
