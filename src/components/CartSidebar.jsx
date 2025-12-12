@@ -131,9 +131,10 @@ const CartSidebar = () => {
             <div key={i.id} className="cart-item">
               <img src={i.image} alt="" width="60" className="cart-item-img" />
               <div className="cart-item-details">
-                <div className="cart-item-title">{i.productName}</div>
+                <div className="cart-item-title mb-0">{i.productName}</div>
                 <small className="text-white">{i.optionLabel}</small>
-                <div className="cart-item-price">₹{i.price}</div>
+                <div className="d-flex align-items-center gap-4 mt-1">
+                  <div className="cart-item-price mb-0">₹{i.price}</div>
                 <div className="cart-item-actions">
                   <button
                     className="quantity-btn decrease-qty"
@@ -148,6 +149,7 @@ const CartSidebar = () => {
                   >
                     +
                   </button>
+                </div>
                 </div>
               </div>
               <button
