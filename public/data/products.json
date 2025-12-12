@@ -8,7 +8,7 @@
       "categories": {
         "mobile": {
           "description": [
-            "✔ 2-screen/Sharing Account",
+            "✔ Single screen/Sharing Account",
             "🔐 Stable Login / No Logout issues",
             "✔ Customer Support: 9:00 AM To 11:30 PM"
           ],
@@ -19,7 +19,7 @@
         },
         "tv": {
           "description": [
-            "✔ 2-screen/Sharing Account",
+            "✔ Single screen/Sharing Account",
             "🔐 Stable Login / No Logout issues",
             "✔ Customer Support: 9:00 AM To 11:30 PM"
           ],
@@ -38,7 +38,7 @@
       "categories": {
         "mobile": {
           "description": [
-            "✔ 2-screen/Sharing Account",
+            "✔ Single screen/Sharing Account",
             "🔐 Stable Login / No Logout issues",
             "✔ Customer Support: 9:00 AM To 11:30 PM"
           ],
@@ -49,7 +49,7 @@
         },
         "tv": {
           "description": [
-            "✔ 2-screen/Sharing Account",
+            "✔ Single screen/Sharing Account",
             "🔐 Stable Login / No Logout issues",
             "✔ Customer Support: 9:00 AM To 11:30 PM"
           ],
@@ -428,7 +428,7 @@
       "categories": {
         "combo": {
           "description": [
-            "✔ 2-screen/Sharing Account",
+            "✔ 2 screen/Sharing Account",
             "🔐 Stable Login / No Logout issues",
             "✔ Customer Support: 9:00 AM To 11:30 PM"
           ],
@@ -440,7 +440,7 @@
         },
         "private": {
           "description": [
-            "✔ 2-screen/Sharing Account",
+            "✔ 3 screen/Sharing Account",
             "🔐 Stable Login / No Logout issues",
             "✔ Customer Support: 9:00 AM To 11:30 PM"
           ],

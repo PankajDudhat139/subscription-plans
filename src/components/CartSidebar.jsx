@@ -123,7 +123,9 @@ const CartSidebar = () => {
   const wMessage = `${header}%0A${items
     .map(
       (i, idx) =>
-        `${idx + 1}. ${i.productName} (${i.optionLabel}) x${i.qty} = ₹${i.price * i.qty}`
+        i.category === "private" || i.category === "combo"
+          ? `${idx + 1}. ${i.productName} (Combo - Private)`
+          : `${idx + 1}. ${i.productName}`
     )
     .join("%0A")}%0A%0ASubtotal: ₹${subtotal.toFixed(
     2
@@ -159,7 +161,7 @@ const CartSidebar = () => {
               <div key={i.id} className="cart-item">
                 <img src={i.image} alt="" width="60" className="cart-item-img" />
                 <div className="cart-item-details">
-                  <div className="cart-item-title mb-0">{i.productName}</div>
+                  <div className="cart-item-title mb-0">{i.productName} ({i.category})</div>
                   <small className="text-white">{i.optionLabel}</small>
                   <div className="d-flex align-items-center gap-4 mt-1">
                     <div className="cart-item-price mb-0">₹{i.price}</div>

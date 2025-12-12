@@ -18,7 +18,7 @@ const Home = ({ searchQuery }) => {
     dispatch(
       addOrIncreaseItem({
         productId: product.id,
-        productName: `${product.title} (${option.category.toUpperCase()})`,
+        productName: `${product.title}`,
         category: option.category,
         optionLabel: option.label,
         price: option.price,
