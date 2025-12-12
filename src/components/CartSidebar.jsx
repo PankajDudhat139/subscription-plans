@@ -94,7 +94,7 @@ const CartSidebar = () => {
   const total = Math.max(subtotal - discount, 0);
 
   const handleSendWhatsApp = () => {
-    const phoneNumber = "919033764742"; // ✅ 9664906256
+    const phoneNumber = "919664906256"; // ✅ 9664906256
     const wMessage = `I have completed the payment for the following plans:%0A${items
       .map(
         (i, idx) =>
