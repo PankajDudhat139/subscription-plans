@@ -47,7 +47,8 @@ body {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
 }
-#search-bar::placeholder {
+#search-bar::placeholder,
+#coupon::placeholder {
   color: #888;
 }
 .coupon-section .btn{
@@ -478,13 +479,13 @@ button:not(:disabled) {
     flex-grow: 1;
 }
 .cart-footer {
-    padding: 1.5rem;
+    padding: 1rem;
     border-top: 1px solid #424242;
 }
 .cart-total {
     display: flex;
     justify-content: space-between;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 700;
     margin-bottom: 1rem;
 }

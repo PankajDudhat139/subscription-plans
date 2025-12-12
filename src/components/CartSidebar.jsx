@@ -165,16 +165,13 @@ const CartSidebar = () => {
 
       {/* ✅ Coupon Input */}
       {items.length > 0 && (
-        <div className="coupon-section px-3 py-2 border-top">
-          <label htmlFor="coupon" className="form-label fw-bold">
-            Have a coupon?
-          </label>
-          <div className="input-group mb-2">
+        <div className="coupon-section px-3 py-2">
+          <div className="input-group">
             <input
               id="coupon"
               type="text"
               className="form-control form-control-sm"
-              placeholder="Enter coupon (e.g. SAVE10)"
+              placeholder="Coupon Code"
               value={coupon}
               onChange={(e) => setCoupon(e.target.value)}
             />
