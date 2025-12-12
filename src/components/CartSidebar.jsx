@@ -35,7 +35,11 @@ const CartSidebar = () => {
   // ✅ Close when clicking outside the cart
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (isOpen && sidebarRef.current && !sidebarRef.current.contains(event.target)) {
+      if (
+        isOpen &&
+        sidebarRef.current &&
+        !sidebarRef.current.contains(event.target)
+      ) {
         dispatch(toggleCart());
       }
     };
@@ -118,30 +122,28 @@ const CartSidebar = () => {
 
   const handleSendWhatsApp = () => {
     const phoneNumber = whatsappSettings.phoneNumber || "919664906256";
-  const header = whatsappSettings.messageTemplate || "I have completed the payment for the following plans:";
-  
-  const wMessage = `${header}%0A${items
-    .map(
-      (i, idx) =>
-        i.category === "private" || i.category === "combo"
-          ? `${idx + 1}. ${i.productName} (Combo - Private)`
-          : `${idx + 1}. ${i.productName}`
-    )
-    .join("%0A")}%0A%0ASubtotal: ₹${subtotal.toFixed(
-    2
-  )}%0ADiscount: − ₹${discount.toFixed(2)}%0ATotal: ₹${total.toFixed(2)}`;
+    const header =
+      whatsappSettings.messageTemplate ||
+      "I have completed the payment for the following plans:";
 
-  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${wMessage}`;
-  window.open(whatsappUrl, "_blank");
+    const wMessage = `${header}%0A${items
+      .map(
+        (i, idx) =>
+          `${idx + 1}. ${i.productName} (${i.optionLabel}) x${i.qty} = ₹${
+            i.price * i.qty
+          }`
+      )
+      .join("%0A")}%0A%0ASubtotal: ₹${subtotal.toFixed(
+      2
+    )}%0ADiscount: − ₹${discount.toFixed(2)}%0ATotal: ₹${total.toFixed(2)}`;
+
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${wMessage}`;
+    window.open(whatsappUrl, "_blank");
   };
 
   return (
     <>
-
-      <div
-        ref={sidebarRef}
-        className={`cart-sidebar ${isOpen ? "open" : ""}`}
-      >
+      <div ref={sidebarRef} className={`cart-sidebar ${isOpen ? "open" : ""}`}>
         <div className="cart-header">
           <h2>Cart</h2>
           <img
@@ -159,9 +161,16 @@ const CartSidebar = () => {
           ) : (
             items.map((i) => (
               <div key={i.id} className="cart-item">
-                <img src={i.image} alt="" width="60" className="cart-item-img" />
+                <img
+                  src={i.image}
+                  alt=""
+                  width="60"
+                  className="cart-item-img"
+                />
                 <div className="cart-item-details">
-                  <div className="cart-item-title mb-0">{i.productName} ({i.category})</div>
+                  <div className="cart-item-title mb-0">
+                    {i.productName} ({i.category})
+                  </div>
                   <small className="text-white">{i.optionLabel}</small>
                   <div className="d-flex align-items-center gap-4 mt-1">
                     <div className="cart-item-price mb-0">₹{i.price}</div>

@@ -8,10 +8,10 @@ const Header = ({ onSearch }) => {
   const totalQty = items.reduce((s, i) => s + i.qty, 0);
 
   return (
-    <nav className="navbar navbar-light px-4 site-header flex-nowrap">
+    <nav className="navbar navbar-light px-4 site-header">
       <span className="navbar-brand fw-bold header-left">
         <div className="site-title">
-          <img src="/images/logo.jpg" alt="" />
+          <img src="/images/logo.jpg" alt="" /> Strive Ott Shop
         </div>
       </span>
       <div className="d-flex gap-3 header-right">
