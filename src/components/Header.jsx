@@ -11,7 +11,7 @@ const Header = ({ onSearch }) => {
     <nav className="navbar navbar-light px-4 site-header flex-nowrap">
       <span className="navbar-brand fw-bold header-left">
         <div className="site-title">
-          <img src="/images/netflix.png" alt="" />
+          <img src="/images/logo.jpg" alt="" />
         </div>
       </span>
       <div className="d-flex gap-3 header-right">
