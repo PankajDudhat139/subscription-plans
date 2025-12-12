@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   selectCartItems,
@@ -22,12 +22,31 @@ const CartSidebar = () => {
   const [message, setMessage] = useState("");
   const [coupons, setCoupons] = useState([]);
 
+  const sidebarRef = useRef(null);
+
   // ✅ Add/remove class on body when cart opens/closes
   useEffect(() => {
     if (isOpen) document.body.classList.add("overflow-hidden");
     else document.body.classList.remove("overflow-hidden");
     return () => document.body.classList.remove("overflow-hidden");
   }, [isOpen]);
+
+  // ✅ Close when clicking outside the cart
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (isOpen && sidebarRef.current && !sidebarRef.current.contains(event.target)) {
+        dispatch(toggleCart());
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [isOpen, dispatch]);
 
   // ✅ Fetch coupons from local JSON
   useEffect(() => {
@@ -94,7 +113,7 @@ const CartSidebar = () => {
   const total = Math.max(subtotal - discount, 0);
 
   const handleSendWhatsApp = () => {
-    const phoneNumber = "919664906256"; // ✅ 9664906256
+    const phoneNumber = "919664906256"; // ✅ add country code
     const wMessage = `I have completed the payment for the following plans:%0A${items
       .map(
         (i, idx) =>
@@ -111,113 +130,119 @@ const CartSidebar = () => {
   };
 
   return (
-    <div className={`cart-sidebar ${isOpen ? "open" : ""}`} tabIndex="-1">
-      <div className="cart-header">
-        <h2>Cart</h2>
-        <img
-          onClick={() => dispatch(toggleCart())}
-          src="/images/cross.png"
-          alt="close"
-        />
-      </div>
+    <>
 
-      <div className="cart-items">
-        {items.length === 0 ? (
-          <p style={{ textAlign: "center", color: "#888" }}>
-            Your cart is empty.
-          </p>
-        ) : (
-          items.map((i) => (
-            <div key={i.id} className="cart-item">
-              <img src={i.image} alt="" width="60" className="cart-item-img" />
-              <div className="cart-item-details">
-                <div className="cart-item-title mb-0">{i.productName}</div>
-                <small className="text-white">{i.optionLabel}</small>
-                <div className="d-flex align-items-center gap-4 mt-1">
-                  <div className="cart-item-price mb-0">₹{i.price}</div>
-                <div className="cart-item-actions">
-                  <button
-                    className="quantity-btn decrease-qty"
-                    onClick={() => dispatch(decreaseQty(i.id))}
-                  >
-                    −
-                  </button>
-                  <div className="item-quantity">{i.qty}</div>
-                  <button
-                    className="quantity-btn increase-qty"
-                    onClick={() => dispatch(increaseQty(i.id))}
-                  >
-                    +
-                  </button>
-                </div>
-                </div>
-              </div>
-              <button
-                className="remove-item-btn"
-                onClick={() => dispatch(removeItem(i.id))}
-              >
-                Remove
-              </button>
-            </div>
-          ))
-        )}
-      </div>
+      <div
+        ref={sidebarRef}
+        className={`cart-sidebar ${isOpen ? "open" : ""}`}
+      >
+        <div className="cart-header">
+          <h2>Cart</h2>
+          <img
+            onClick={() => dispatch(toggleCart())}
+            src="/images/cross.png"
+            alt="close"
+          />
+        </div>
 
-      {/* ✅ Coupon Input */}
-      {items.length > 0 && (
-        <div className="coupon-section px-3 py-2">
-          <div className="input-group">
-            <input
-              id="coupon"
-              type="text"
-              className="form-control form-control-sm"
-              placeholder="Coupon Code"
-              value={coupon}
-              onChange={(e) => setCoupon(e.target.value)}
-            />
-            <button
-              className="btn btn-outline-primary btn-sm"
-              onClick={handleApplyCoupon}
-            >
-              Apply
-            </button>
-          </div>
-          {message && (
-            <p
-              className={`small mb-0 ${
-                message.includes("off") ? "text-success" : "text-danger"
-              }`}
-            >
-              {message}
+        <div className="cart-items">
+          {items.length === 0 ? (
+            <p style={{ textAlign: "center", color: "#888" }}>
+              Your cart is empty.
             </p>
+          ) : (
+            items.map((i) => (
+              <div key={i.id} className="cart-item">
+                <img src={i.image} alt="" width="60" className="cart-item-img" />
+                <div className="cart-item-details">
+                  <div className="cart-item-title mb-0">{i.productName}</div>
+                  <small className="text-white">{i.optionLabel}</small>
+                  <div className="d-flex align-items-center gap-4 mt-1">
+                    <div className="cart-item-price mb-0">₹{i.price}</div>
+                    <div className="cart-item-actions">
+                      <button
+                        className="quantity-btn decrease-qty"
+                        onClick={() => dispatch(decreaseQty(i.id))}
+                      >
+                        −
+                      </button>
+                      <div className="item-quantity">{i.qty}</div>
+                      <button
+                        className="quantity-btn increase-qty"
+                        onClick={() => dispatch(increaseQty(i.id))}
+                      >
+                        +
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <button
+                  className="remove-item-btn"
+                  onClick={() => dispatch(removeItem(i.id))}
+                >
+                  Remove
+                </button>
+              </div>
+            ))
           )}
         </div>
-      )}
 
-      <div className="cart-footer">
+        {/* ✅ Coupon Input */}
         {items.length > 0 && (
-          <>
-            <div className="cart-total d-flex justify-content-between mb-1">
-              <span>Subtotal:</span> <span>₹{subtotal.toFixed(2)}</span>
+          <div className="coupon-section px-3 py-2">
+            <div className="input-group">
+              <input
+                id="coupon"
+                type="text"
+                className="form-control form-control-sm"
+                placeholder="Coupon Code"
+                value={coupon}
+                onChange={(e) => setCoupon(e.target.value)}
+              />
+              <button
+                className="btn btn-outline-primary btn-sm"
+                onClick={handleApplyCoupon}
+              >
+                Apply
+              </button>
             </div>
-            <div className="cart-total d-flex justify-content-between mb-1">
-              <span>Discount:</span>{" "}
-              <span className="text-success">− ₹{discount.toFixed(2)}</span>
-            </div>
-            <div className="cart-total d-flex justify-content-between fw-bold border-top pt-2 mb-2">
-              <span>Total:</span> <span>₹{total.toFixed(2)}</span>
-            </div>
-          </>
+            {message && (
+              <p
+                className={`small mb-0 ${
+                  message.includes("off") ? "text-success" : "text-danger"
+                }`}
+              >
+                {message}
+              </p>
+            )}
+          </div>
         )}
-        <button
-          className="checkout-btn"
-          disabled={!items.length}
-          onClick={handleSendWhatsApp}
-        >
-          Checkout
-        </button>
+
+        <div className="cart-footer">
+          {items.length > 0 && (
+            <>
+              <div className="cart-total d-flex justify-content-between mb-1">
+                <span>Subtotal:</span> <span>₹{subtotal.toFixed(2)}</span>
+              </div>
+              <div className="cart-total d-flex justify-content-between mb-1">
+                <span>Discount:</span>{" "}
+                <span className="text-success">− ₹{discount.toFixed(2)}</span>
+              </div>
+              <div className="cart-total d-flex justify-content-between fw-bold border-top pt-2 mb-2">
+                <span>Total:</span> <span>₹{total.toFixed(2)}</span>
+              </div>
+            </>
+          )}
+          <button
+            className="checkout-btn"
+            disabled={!items.length}
+            onClick={handleSendWhatsApp}
+          >
+            Checkout
+          </button>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

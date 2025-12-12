@@ -3,7 +3,9 @@ body {
   background-color: #000 !important;
   font-family: "Poppins", Arial, sans-serif;
 }
-
+.container-fluid{
+  max-width: 1880px !important;
+}
 .site-header {
   background-color: #111;
   padding: 1rem 2rem;
