@@ -419,7 +419,8 @@
           ]
         }
       }
-    },{
+    },
+    {
       "id": "15",
       "title": "Netflix",
       "image": "./images/netflix.png",
@@ -471,5 +472,10 @@
       "value": 100,
       "description": "Flat ₹100 off for first-time customers"
     }
-  ]
+  ],
+  "whatsapp": {
+    "phoneNumber": "919664906256",
+    "messageTemplate": "I have completed the payment for the following plans:",
+    "footerNote": "Subtotal, discount, and total will be included automatically."
+  }
 }

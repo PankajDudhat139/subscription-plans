@@ -21,6 +21,7 @@ const CartSidebar = () => {
   const [activeCoupon, setActiveCoupon] = useState(null);
   const [message, setMessage] = useState("");
   const [coupons, setCoupons] = useState([]);
+  const [whatsappSettings, setWhatsAppSettings] = useState({});
 
   const sidebarRef = useRef(null);
 
@@ -52,7 +53,10 @@ const CartSidebar = () => {
   useEffect(() => {
     fetch("/data/products.json")
       .then((res) => res.json())
-      .then((data) => setCoupons(data.coupons || []))
+      .then((data) => {
+        setCoupons(data.coupons || []);
+        setWhatsAppSettings(data.whatsapp || {});
+      })
       .catch((err) => console.error("Failed to load coupons", err));
   }, []);
 
@@ -113,20 +117,20 @@ const CartSidebar = () => {
   const total = Math.max(subtotal - discount, 0);
 
   const handleSendWhatsApp = () => {
-    const phoneNumber = "919664906256"; // ✅ add country code
-    const wMessage = `I have completed the payment for the following plans:%0A${items
-      .map(
-        (i, idx) =>
-          `${idx + 1}. ${i.productName} (${i.optionLabel}) x${i.qty} = ₹${
-            i.price * i.qty
-          }`
-      )
-      .join("%0A")}%0A%0ASubtotal: ₹${subtotal.toFixed(
-      2
-    )}%0ADiscount: − ₹${discount.toFixed(2)}%0ATotal: ₹${total.toFixed(2)}`;
+    const phoneNumber = whatsappSettings.phoneNumber || "919664906256";
+  const header = whatsappSettings.messageTemplate || "I have completed the payment for the following plans:";
+  
+  const wMessage = `${header}%0A${items
+    .map(
+      (i, idx) =>
+        `${idx + 1}. ${i.productName} (${i.optionLabel}) x${i.qty} = ₹${i.price * i.qty}`
+    )
+    .join("%0A")}%0A%0ASubtotal: ₹${subtotal.toFixed(
+    2
+  )}%0ADiscount: − ₹${discount.toFixed(2)}%0ATotal: ₹${total.toFixed(2)}`;
 
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${wMessage}`;
-    window.open(whatsappUrl, "_blank");
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${wMessage}`;
+  window.open(whatsappUrl, "_blank");
   };
 
   return (
