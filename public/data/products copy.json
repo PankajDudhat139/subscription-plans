@@ -1,0 +1,481 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "title": "Jio Hotstar",
+      "image": "./images/jio-hotstar.jpg",
+      "class": "jio-hotstar",
+      "categories": {
+        "mobile": {
+          "description": [
+            "✔ Single screen/Sharing Account",
+            "🔐 Stable Login / No Logout issues",
+            "✔ Customer Support: 9:00 AM To 11:30 PM"
+          ],
+          "options": [
+            { "label": "1-Month Premium 4K", "price": 60 },
+            { "label": "6-Month Premium 4K", "price": 299 }
+          ]
+        },
+        "tv": {
+          "description": [
+            "✔ Single screen/Sharing Account",
+            "🔐 Stable Login / No Logout issues",
+            "✔ Customer Support: 9:00 AM To 11:30 PM"
+          ],
+          "options": [
+            { "label": "1-Month Premium 4K", "price": 69 },
+            { "label": "6-Month Premium 4K", "price": 349 }
+          ]
+        }
+      }
+    },
+    {
+      "id": "2",
+      "title": "Netflix",
+      "image": "./images/netflix.png",
+      "class": "netflix",
+      "categories": {
+        "mobile": {
+          "description": [
+            "✔ Single screen/Sharing Account",
+            "🔐 Stable Login / No Logout issues",
+            "✔ Customer Support: 9:00 AM To 11:30 PM"
+          ],
+          "options": [
+            { "label": "1-Month Premium 4K", "price": 80 },
+            { "label": "6-Month Premium 4K", "price": 399 }
+          ]
+        },
+        "tv": {
+          "description": [
+            "✔ Single screen/Sharing Account",
+            "🔐 Stable Login / No Logout issues",
+            "✔ Customer Support: 9:00 AM To 11:30 PM"
+          ],
+          "options": [
+            { "label": "1-Month Premium 4K", "price": 99 },
+            { "label": "6-Month Premium 4K", "price": 499 }
+          ]
+        }
+      }
+    },
+    {
+      "id": "3",
+      "title": "Prime Video",
+      "image": "./images/prime.jpg",
+      "class": "prime-video",
+      "categories": {
+        "mobile": {
+          "description": [
+            "✔ Premium Movies & Shows",
+            "🔐 No Logout Issues",
+            "✔ Customer Support: 9:00 AM To 11:30 PM"
+          ],
+          "options": [
+            { "label": "1-Month Premium", "price": 60 },
+            { "label": "6-Month Premium", "price": 299 }
+          ]
+        },
+        "tv": {
+          "description": [
+            "✔ HD Streaming Access",
+            "🔐 Multi-device Support",
+            "✔ Customer Support: 9:00 AM To 11:30 PM"
+          ],
+          "options": [
+            { "label": "1-Month Premium", "price": 69 },
+            { "label": "6-Month Premium", "price": 349 }
+          ]
+        }
+      }
+    },
+    {
+      "id": "4",
+      "title": "Zee5",
+      "image": "./images/zee5.png",
+      "class": "zee5",
+      "categories": {
+        "mobile": {
+          "description": [
+            "✔ Premium Access",
+            "✔ Watch on multiple devices",
+            "✔ Customer Support: 9:00 AM To 11:30 PM"
+          ],
+          "options": [
+            { "label": "1-Month Premium", "price": 70 },
+            { "label": "6-Month Premium", "price": 349 }
+          ]
+        },
+        "tv": {
+          "description": [
+            "✔ Premium Access for TV",
+            "✔ Stable Login Support",
+            "✔ Customer Support: 9:00 AM To 11:30 PM"
+          ],
+          "options": [
+            { "label": "1-Month Premium", "price": 79 },
+            { "label": "6-Month Premium", "price": 399 }
+          ]
+        }
+      }
+    },
+    {
+      "id": "5",
+      "title": "Sony Liv",
+      "image": "./images/sony-liv.png",
+      "class": "sony-liv",
+      "categories": {
+        "mobile": {
+          "description": [
+            "✔ All-access content",
+            "🔐 No login interruption",
+            "✔ Customer Support: 9:00 AM To 11:30 PM"
+          ],
+          "options": [
+            { "label": "1-Month Premium", "price": 80 },
+            { "label": "6-Month Premium", "price": 399 }
+          ]
+        },
+        "tv": {
+          "description": [
+            "✔ Premium HD TV Access",
+            "🔐 Stable Login / No Logout",
+            "✔ Customer Support: 9:00 AM To 11:30 PM"
+          ],
+          "options": [
+            { "label": "1-Month Premium", "price": 89 },
+            { "label": "6-Month Premium", "price": 449 }
+          ]
+        }
+      }
+    },
+    {
+      "id": "6",
+      "title": "Spotify",
+      "image": "./images/spotify.jpg",
+      "class": "spotify",
+      "categories": {
+        "mobile": {
+          "description": [
+            "✔ Premium Music Access",
+            "🎵 Ad-Free Listening",
+            "✔ Customer Support: 9:00 AM To 11:30 PM"
+          ],
+          "options": [
+            { "label": "1-Month Premium", "price": 59 },
+            { "label": "6-Month Premium", "price": 299 }
+          ]
+        },
+        "tv": {
+          "description": [
+            "✔ Premium Audio Streaming",
+            "🎧 Multi-device Access",
+            "✔ Customer Support: 9:00 AM To 11:30 PM"
+          ],
+          "options": [
+            { "label": "1-Month Premium", "price": 69 },
+            { "label": "6-Month Premium", "price": 349 }
+          ]
+        }
+      }
+    },
+    {
+      "id": "7",
+      "title": "Crunchyroll",
+      "image": "./images/crunchy-roll.png",
+      "class": "crunchy-roll",
+      "categories": {
+        "mobile": {
+          "description": [
+            "✔ HD Anime Streaming",
+            "📱 Multi-device Support",
+            "✔ Customer Support: 9:00 AM To 11:30 PM"
+          ],
+          "options": [
+            { "label": "1-Month Premium", "price": 99 },
+            { "label": "6-Month Premium", "price": 499 }
+          ]
+        },
+        "tv": {
+          "description": [
+            "✔ HD Anime Access for TV",
+            "📺 Stable Login / No Ads",
+            "✔ Customer Support: 9:00 AM To 11:30 PM"
+          ],
+          "options": [
+            { "label": "1-Month Premium", "price": 109 },
+            { "label": "6-Month Premium", "price": 549 }
+          ]
+        }
+      }
+    },
+    {
+      "id": "8",
+      "title": "ALT Balaji",
+      "image": "./images/altt-balaji.png",
+      "class": "altt-balaji",
+      "categories": {
+        "mobile": {
+          "description": [
+            "✔ Original Web Series",
+            "✔ Multiple Device Login",
+            "✔ Customer Support: 9:00 AM To 11:30 PM"
+          ],
+          "options": [
+            { "label": "1-Month Premium", "price": 49 },
+            { "label": "6-Month Premium", "price": 249 }
+          ]
+        },
+        "tv": {
+          "description": [
+            "✔ HD Web Series for TV",
+            "🔐 Stable Login",
+            "✔ Customer Support: 9:00 AM To 11:30 PM"
+          ],
+          "options": [
+            { "label": "1-Month Premium", "price": 59 },
+            { "label": "6-Month Premium", "price": 299 }
+          ]
+        }
+      }
+    },
+    {
+      "id": "9",
+      "title": "Ullu",
+      "image": "./images/ullu.png",
+      "class": "ullu",
+      "categories": {
+        "mobile": {
+          "description": [
+            "✔ Exclusive Originals",
+            "🔐 Stable Account Access",
+            "✔ Customer Support: 9:00 AM To 11:30 PM"
+          ],
+          "options": [
+            { "label": "1-Month Premium", "price": 99 },
+            { "label": "6-Month Premium", "price": 399 }
+          ]
+        },
+        "tv": {
+          "description": [
+            "✔ Exclusive Originals on TV",
+            "🔐 Multi-User Access",
+            "✔ Customer Support: 9:00 AM To 11:30 PM"
+          ],
+          "options": [
+            { "label": "1-Month Premium", "price": 109 },
+            { "label": "6-Month Premium", "price": 449 }
+          ]
+        }
+      }
+    },
+    {
+      "id": "10",
+      "title": "FanCode",
+      "image": "./images/fan-code.png",
+      "class": "fan-code",
+      "categories": {
+        "mobile": {
+          "description": [
+            "🏏 Live Sports Access",
+            "✔ Multi-login Support",
+            "✔ Customer Support: 9:00 AM To 11:30 PM"
+          ],
+          "options": [
+            { "label": "1-Month Premium", "price": 89 },
+            { "label": "6-Month Premium", "price": 449 }
+          ]
+        },
+        "tv": {
+          "description": [
+            "🏏 Live Matches on TV",
+            "🔐 HD Streaming Access",
+            "✔ Customer Support: 9:00 AM To 11:30 PM"
+          ],
+          "options": [
+            { "label": "1-Month Premium", "price": 99 },
+            { "label": "6-Month Premium", "price": 499 }
+          ]
+        }
+      }
+    },
+    {
+      "id": "11",
+      "title": "Discovery Plus",
+      "image": "./images/discovery-plus.png",
+      "class": "discovery-plus",
+      "categories": {
+        "mobile": {
+          "description": [
+            "🌍 Explore Documentaries",
+            "🔐 Stable Login",
+            "✔ Customer Support: 9:00 AM To 11:30 PM"
+          ],
+          "options": [
+            { "label": "1-Month Premium", "price": 79 },
+            { "label": "6-Month Premium", "price": 399 }
+          ]
+        },
+        "tv": {
+          "description": [
+            "🌍 Documentary Streaming in HD",
+            "🔐 Multi-device Access",
+            "✔ Customer Support: 9:00 AM To 11:30 PM"
+          ],
+          "options": [
+            { "label": "1-Month Premium", "price": 89 },
+            { "label": "6-Month Premium", "price": 449 }
+          ]
+        }
+      }
+    },
+    {
+      "id": "12",
+      "title": "Aha",
+      "image": "./images/aha.jpg",
+      "class": "aha",
+      "categories": {
+        "mobile": {
+          "description": [
+            "✔ Regional Content Access",
+            "🎬 HD Streaming",
+            "✔ Customer Support: 9:00 AM To 11:30 PM"
+          ],
+          "options": [
+            { "label": "1-Month Premium", "price": 49 },
+            { "label": "6-Month Premium", "price": 249 }
+          ]
+        },
+        "tv": {
+          "description": [
+            "✔ Regional HD Streaming on TV",
+            "🔐 Multi-device Access",
+            "✔ Customer Support: 9:00 AM To 11:30 PM"
+          ],
+          "options": [
+            { "label": "1-Month Premium", "price": 59 },
+            { "label": "6-Month Premium", "price": 299 }
+          ]
+        }
+      }
+    },
+    {
+      "id": "13",
+      "title": "YouTube Premium",
+      "image": "./images/youtube-premium.jpg",
+      "class": "youtube-premium",
+      "categories": {
+        "mobile": {
+          "description": [
+            "✔ Ad-free Videos",
+            "🎶 Background Playback",
+            "✔ Customer Support: 9:00 AM To 11:30 PM"
+          ],
+          "options": [
+            { "label": "1-Month Premium", "price": 129 },
+            { "label": "6-Month Premium", "price": 699 }
+          ]
+        },
+        "tv": {
+          "description": [
+            "✔ Ad-free TV Playback",
+            "🔐 HD Access for Smart TVs",
+            "✔ Customer Support: 9:00 AM To 11:30 PM"
+          ],
+          "options": [
+            { "label": "1-Month Premium", "price": 139 },
+            { "label": "6-Month Premium", "price": 749 }
+          ]
+        }
+      }
+    },
+    {
+      "id": "14",
+      "title": "FapHouse",
+      "image": "./images/fap-house.png",
+      "class": "fap-house",
+      "categories": {
+        "mobile": {
+          "description": [
+            "🔐 Stable Login / No Logout",
+            "✔ Full HD Access",
+            "✔ Customer Support: 9:00 AM To 11:30 PM"
+          ],
+          "options": [
+            { "label": "1-Month Premium", "price": 149 },
+            { "label": "6-Month Premium", "price": 499 }
+          ]
+        },
+        "tv": {
+          "description": [
+            "🔐 Full HD Access for Smart TVs",
+            "✔ Stable Login / No Issues",
+            "✔ Customer Support: 9:00 AM To 11:30 PM"
+          ],
+          "options": [
+            { "label": "1-Month Premium", "price": 159 },
+            { "label": "6-Month Premium", "price": 549 }
+          ]
+        }
+      }
+    },
+    {
+      "id": "15",
+      "title": "Netflix",
+      "image": "./images/netflix.png",
+      "class": "netflix",
+      "categories": {
+        "combo": {
+          "description": [
+            "✔ 2 screen/Sharing Account",
+            "🔐 Stable Login / No Logout issues",
+            "✔ Customer Support: 9:00 AM To 11:30 PM"
+          ],
+          "options": [
+            { "label": "1-Month Premium 4K", "price": 149 },
+            { "label": "4-Month Premium 4K", "price": 449 },
+            { "label": "6-Month Premium 4K", "price": 599 }
+          ]
+        },
+        "private": {
+          "description": [
+            "✔ 3 screen/Sharing Account",
+            "🔐 Stable Login / No Logout issues",
+            "✔ Customer Support: 9:00 AM To 11:30 PM"
+          ],
+          "options": [
+            { "label": "1-Month Premium 4K", "price": 199 },
+            { "label": "6-Month Premium 4K", "price": 999 }
+          ]
+        }
+      }
+    }
+  ],
+  "coupons": [
+    {
+      "code": "SAVE10",
+      "type": "percent",
+      "value": 10,
+      "description": "Get 10% off on your total order"
+    },
+    {
+      "code": "SAVE500",
+      "type": "flat",
+      "value": 500,
+      "minSubtotal": 5000,
+      "description": "Flat ₹500 off on orders above ₹5000"
+    },
+    {
+      "code": "NEW100",
+      "type": "flat",
+      "value": 100,
+      "description": "Flat ₹100 off for first-time customers"
+    }
+  ],
+  "whatsapp": {
+    "phoneNumber": "919664906256",
+    "messageTemplate": "Hey.! I want this subscription send your QR Code Please..!!",
+    "footerNote": "Subtotal, discount, and total will be included automatically."
+  }
+}
