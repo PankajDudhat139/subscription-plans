@@ -1,70 +1,95 @@
-# Getting Started with Create React App
+# Product & Coupon Data Reference
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This document describes the structure and configuration of the `products.json` file used in the project.  
+It defines available products, associated images, class-based card colors, plan details, and valid coupon codes.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 📦 File Location
+`public/data/products.json`
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🖼️ Product Images
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+| Product        | Image Name         | Path                           | Status |
+|----------------|-------------------|----------------------------------|---------|
+| **Jio Hotstar** | `jio-hotstar.jpg` | `/images/jio-hotstar.jpg` | ✅ Working |
+| **Netflix** | `netflix.png` | `/images/netflix.png` | ✅ Working |
+| **Prime Video** | `prime.jpg` | `/images/prime.png` | ✅ Working |
+| **Zee5** | `zee5.png` | `/images/zee5.png` | ⚙️ Placeholder |
+| **Sony Liv** | `sony-liv.png` | `/images/sony-liv.png` | ⚙️ Placeholder |
+| **Spotify** | `spotify.jpg` | `/images/spotify.png` | ⚙️ Placeholder |
+| **Crunchyroll** | `crunchy-roll.png` | `/images/crunchy-roll.png` | ⚙️ Placeholder |
+| **ALT Balaji** | `altt-balaji.png` | `/images/altt-balaji.png` | ⚙️ Placeholder |
+| **Ullu** | `ullu.png` | `/images/ullu.png` | ⚙️ Placeholder |
+| **FanCode** | `fan-code.png` | `/images/fan-code.png` | ⚙️ Placeholder |
+| **Discovery Plus** | `discovery-plus.png` | `/images/discovery-plus.png` | ⚙️ Placeholder |
+| **Aha** | `aha.png` | `/images/aha.jpg` | ⚙️ Placeholder |
+| **YouTube Premium** | `youtube-premium.jpg` | `/images/youtube-premium.png` | ⚙️ Placeholder |
+| **FapHouse** | `fap-house.png` | `/images/fap-house.png` | ⚙️ Placeholder |
 
-### `npm test`
+> Only the above image names are active and used in this configuration.  
+> All other `.card.*` CSS classes are available for future extension.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 🎨 Card Class and Accent Color Mapping
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+| Class Name | Example Product | Accent Color | Transparent Color |
+|-------------|----------------|---------------|-------------------|
+| `.netflix` | Netflix | `#d1050f` | `rgba(209, 5, 15, 0.25)` |
+| `.prime-video` | Prime Video | `#0677ff` | `rgba(6, 119, 255, 0.25)` |
+| `.jio-hotstar` | Jio Hotstar | `#903de2` | `rgba(144, 61, 226, 0.25)` |
+| `.zee5` | Zee5 | `#fdb704` | `rgba(253, 183, 4, 0.25)` |
+| `.sony-liv` | SonyLiv | `#b030ef` | `rgba(176, 48, 239, 0.25)` |
+| `.spotify` | Spotify | `#21d760` | `rgba(33, 215, 96, 0.25)` |
+| `.crunchy-roll` | Crunchyroll | `#ff5e00` | `rgba(255, 94, 0, 0.25)` |
+| `.altt-balaji` | ALTBalaji | `#ff0468` | `rgba(255, 4, 104, 0.25)` |
+| `.ullu` | Ullu | `#f6b818` | `rgba(246, 184, 24, 0.25)` |
+| `.fan-code` | FanCode | `#ff5000` | `rgba(255, 80, 0, 0.25)` |
+| `.discovery-plus` | Discovery+ | `#22cce6` | `rgba(34, 204, 230, 0.25)` |
+| `.aha` | Aha | `#ff5000` | `rgba(255, 80, 0, 0.25)` |
+| `.youtube-premium` | YouTube Premium | `#fe0000` | `rgba(254, 0, 0, 0.25)` |
+| `.fap-house` | FapHouse | `#f0b801` | `rgba(240, 184, 1, 0.25)` |
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+> These variables are used by Tailwind/CSS to theme product cards dynamically.  
+> If a `.card.<class>` is missing, default colors will be applied.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 🧩 Product Structure Example
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Each product in the JSON follows this format:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```json
+{
+  "id": "1",
+  "title": "Jio Hotstar",
+  "image": "./images/jio-hotstar.jpg",
+  "class": "jio-hotstar",
+  "categories": {
+    "mobile": {
+      "description": [
+        "✔ 2-screen/Sharing Account",
+        "🔐 Stable Login / No Logout issues",
+        "✔ Customer Support: 9:00 AM To 11:30 PM"
+      ],
+      "options": [
+        { "label": "1-Month Premium 4K", "price": 60 },
+        { "label": "6-Month Premium 4K", "price": 299 }
+      ]
+    },
+    "tv": {
+      "description": [
+        "✔ 2-screen/Sharing Account",
+        "🔐 Stable Login / No Logout issues",
+        "✔ Customer Support: 9:00 AM To 11:30 PM"
+      ],
+      "options": [
+        { "label": "1-Month Premium 4K", "price": 69 },
+        { "label": "6-Month Premium 4K", "price": 349 }
+      ]
+    }
+  }
+}
