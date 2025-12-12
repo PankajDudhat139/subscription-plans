@@ -169,7 +169,7 @@ const CartSidebar = () => {
                 />
                 <div className="cart-item-details">
                   <div className="cart-item-title mb-0">
-                    {i.productName} ({i.category})
+                    {i.productName}
                   </div>
                   <small className="text-white">{i.optionLabel}</small>
                   <div className="d-flex align-items-center gap-4 mt-1">
